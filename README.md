@@ -12,9 +12,9 @@ The [src](../master/src) folder has following subfolders:
 * [WebForm](../master/src/WebForm) folder has WebForms and User Controllers that can be used in ASP.NET project. Current files are for testing that show how to make payments with Checkout Finland.
 
 
-The [example](../master/example) folder has DemoProject made using Visual Studio 2015 that uses the code in [src](/../master/src) folder.
+The [example](../master/example) folder has DemoProject made using Visual Studio 2015 which uses the code in [src](/../master/src) folder.
 
-Special thanks go to rkioski’s php GitHub project [CheckoutAPIClient](https://github.com/rkioski/CheckoutAPIClient),  which I used as basis for this project. 
+Special thanks go to *rkioski’s* php GitHub project [CheckoutAPIClient](https://github.com/rkioski/CheckoutAPIClient),  which I used as basis for this project. 
 
 More Checkout Finland [info](https://checkout.fi/materiaalit/tekninen-materiaali/). 
 
