@@ -1,0 +1,65 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.master.cs" Inherits="Checkout.Layout" %>
+<%@ Import Namespace="System.Web.Optimization" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Finland Demo</title>
+    <%:Styles.Render("~/Content/css") %>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <asp:HyperLink ID="rootHyperlink" NavigateUrl="~/Home.aspx" runat="server" CssClass="navbar-brand">
+                                Checkout Finland Demo
+                    </asp:HyperLink>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="">
+                            <asp:HyperLink ID="mvcHyperlink" NavigateUrl="<%$RouteUrl:routename=default,controller=Checkout,action=Payment%>" runat="server">
+                                MVC
+                            </asp:HyperLink>
+                        </li>
+                        <li class="active">
+                            <asp:HyperLink ID="webFormsHyperlink" NavigateUrl="~/PaymentWebForm.aspx" runat="server">
+                                WebForm
+                            </asp:HyperLink>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container body-content">
+
+
+            <asp:ContentPlaceHolder ID="MainContentPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+         
+
+            <hr />
+            <footer>
+         
+            </footer>
+        </div>
+
+        <%: Scripts.Render("~/bundles/jquery") %>
+        <%: Scripts.Render("~/bundles/bootstrap") %>
+
+        <asp:ContentPlaceHolder ID="ScriptSection" runat="server">
+        </asp:ContentPlaceHolder>
+   </form>
+</body>
+</html>

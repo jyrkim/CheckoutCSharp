@@ -1,0 +1,35 @@
+﻿@model ViewModel.QueryViewModel
+
+@{
+    ViewBag.Title = "PaymentResponse";
+    ViewBag.MVC = "active";
+}
+
+<br />
+<br />
+
+<h4>Payment Response</h4>
+
+<hr />
+
+Payment status: <b>@ViewBag.PaymentResponseMessage</b>
+<p>
+
+    @using (Html.BeginForm("Query", "Checkout", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.Stamp)
+        @Html.HiddenFor(model => model.Reference)
+        @Html.HiddenFor(model => model.Amount)
+
+        <input type="submit" value="Query previous payment" class="btn btn-default" />
+    }
+
+</p>
+
+<br />
+<br />
+@Html.ActionLink("New payment", "Payment")
+
+

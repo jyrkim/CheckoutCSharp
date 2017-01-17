@@ -1,0 +1,210 @@
+﻿/* This is the original CSS copied from Checkout Finland Web site */
+
+body  {
+	background-color: #f2ede6;
+	margin: 0;
+	text-align: left;
+}
+
+
+/* Rungon sisÃ¤ltÃ¶: */
+#container{
+	width: 900px;
+	margin: 0 auto;
+	background-color: #fff;
+}
+
+/*ylÃ¤osa*/
+#top{
+	height: 59px;
+	width: 900px;
+	background-image: url(uploads/images/ylapalkkisin.png);
+	background-repeat: no-repeat;
+	float: left;
+}
+
+#middle{
+	width: 900px;
+	float: left;
+	padding-bottom: 20px;
+	background: url(uploads/images/sivutausta.png) repeat-x;
+	background-color: #fff;
+}
+
+/*keskiosa*/
+#center{
+	width: 900px;
+	height: auto;
+	float: left;
+	padding-bottom: 20px;
+	min-height: 400px;
+}
+
+#left{
+	width: 370px;
+	height: 100%;
+	float: left;
+	padding: 40px;
+        line-height: 120%;
+}
+
+#right{
+	width: 370px;
+	height: auto;
+	float: left;
+	padding: 40px;
+	text-align: left;
+        line-height: 120%;
+}
+
+#otsikkoviival{
+	width: 300px;
+	height: auto;
+	float: left;
+	margin-top: 0px;
+	border-bottom: 1px #369 solid;
+}
+
+#otsikkoviivar{
+	width: 300px;
+	height: auto;
+	float: left;
+	margin-left: 70px;
+	border-bottom: 1px #399 solid;
+	color: #399;
+}
+
+/*alaosa*/
+#bottom{
+	height: 50px;
+	width: 900px;
+	background-color: #fff;
+	float: left;
+}
+
+#bottomcenter{
+	height: 50px;
+	width: 800px;
+	float: left;
+	margin-left: 50px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #369;
+	font-weight: bold;
+	color: #369
+}
+
+.kesk{
+	text-align: center;
+}
+
+.kesk_p {cursor:pointer;}
+
+.kesk_p a {
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1;
+}
+
+.alalinkki{
+	text-align: right;
+	margin-right: 70px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.vihr{
+	color: #399;
+}
+
+.checkout{
+	margin-bottom: -70px;
+	margin-left: -30px;
+}
+
+p{
+	font-family: Arial, Helvetica, Tahoma, Verdana;
+	font-size: 13px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+a{
+	text-decoration: none;
+	font-family: Arial, Helvetica, Tahoma, Verdana;
+	color: #369;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+a:hover{
+	text-decoration: none;
+	color: #39c;
+}
+
+img{
+	border: 0;
+	margin-left: 150px;
+	margin-top: 40px;
+}
+
+H2 {
+    color: #369;
+    font-family: Arial, Helvetica, Tahoma, Verdana;
+    font-size: 18px;
+    font-weight: bold;
+}
+H3 {
+    color: #369;
+    font-family: Arial, Helvetica, Tahoma, Verdana;
+    font-size: 14px;
+}
+a{
+    text-decoration: underline;
+}
+a,TD {
+    font-family: Arial, Helvetica, Tahoma, Verdana;
+    font-size: 13px;
+}
+.C1 {
+     width: 180px;
+     height: 120px;
+     border: 1pt solid #a0a0a0;
+     display: block;
+     float: left;
+     margin: 7px;
+     -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+     clear: none;
+     padding: 0;
+}
+
+.C1:hover {
+     background-color: #f0f0f0;
+     border-color: black;
+}
+
+.C1 form {
+    width: 180px;height: 120px;
+}
+.C1 form span {
+     display:table-cell; vertical-align:middle;
+     height: 92px;
+     width: 180px;
+}
+.C1 form span input {
+     margin-left: auto;
+     margin-right: auto;
+     display: block;
+     border: 1pt solid #f2f2f2;
+     -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;
+     padding: 5px;
+     background-color: white;
+}
+.C1:hover form span input {
+    border: 1pt solid black;
+}
+.C1 div {
+     text-align: center;
+     font-family: arial;
+     font-size: 8pt;
+}

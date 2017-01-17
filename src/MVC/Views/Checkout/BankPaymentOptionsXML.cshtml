@@ -1,0 +1,61 @@
+﻿<!-- HTML elements and CSS (Checkout.css) follow closely the example at Checkout Finland's Web page:
+    http://demo1.checkout.fi/xml2.php -->
+@{
+    Layout = null;
+    Dictionary<string, string> Translations = (Dictionary<string, string>)ViewBag.Translations;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>BankPaymentOptionsXML</title>
+    <link href="@Url.Content("~/Content/Checkout.css")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div id="container">
+
+        <div id="top">
+        </div>
+
+        <div id="middle">
+            <div id="center">
+                <div id="content">
+                    <br>
+                    <center>
+                        <div style="width: 95%; text-align: left;">
+
+                            <!-- optional partial for merchant and buyer info -->
+                            @Html.Partial("./Partials/MerchantAndBuyerPartial")
+
+                            <br>
+                            <!-- bank payment options partial -->
+                            @Html.Partial("./Partials/BankPaymentOptionsPartial")
+
+                            @*
+                                <!-- depreciated payment url -->
+                                @Html.Partial("./Partials/PaymentURLPartial")
+                            *@
+
+                            <hr style="clear: both;">
+
+                            <!-- optional partial for Checkout Finland info -->
+                            @Html.Partial("./Partials/CheckoutFinlandInfoPartial")
+
+                        </div>
+
+                    </center>
+                </div>
+            </div><!-- eof center -->
+        </div> <!-- eof middle -->
+
+        <div id="bottom">
+            <div id="bottomcenter">
+                <p class="kesk">@Translations["checkoutFinlandContact"]</p>
+            </div>
+        </div> <!-- eof bottom -->
+    </div> <!-- eof container -->
+</body>
+</html>
+

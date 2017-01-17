@@ -1,0 +1,59 @@
+﻿@using System.Xml.Linq;
+
+@{
+    ViewBag.Title = "Query";
+    ViewBag.MVC = "active";
+}
+
+@{
+    XDocument xmlDoc = XDocument.Parse(@ViewBag.QueryResponse);
+    XElement tradeElem = (XElement)xmlDoc.FirstNode;
+    XElement statusElem = (XElement)tradeElem.FirstNode;
+}
+
+<br />
+<br />
+
+<h4>Query response</h4>
+
+<hr />
+
+Payment status: <b>@ViewBag.QueryResponseMessage  </b>
+<br />
+<br />
+Query response XML:
+
+<br />
+
+<br />
+<span style="color: red">
+    @xmlDoc.Declaration
+</span>
+<br />
+<span style="color: green">
+    &lt;@tradeElem.Name>
+</span>
+<br />
+<span style="color: blue; margin-left:10px">
+    &lt;@statusElem.Name>
+</span>
+
+<span>
+    @statusElem.Value
+</span>
+
+<span style="color: blue">
+    &lt;/@statusElem.Name>
+</span>
+
+<br />
+<span style="color: green">
+    &lt;/@tradeElem.Name>
+</span>
+
+<br />
+<br />
+@Html.ActionLink("New payment", "Payment")
+
+
+

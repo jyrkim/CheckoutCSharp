@@ -1,0 +1,12 @@
+﻿@using System.Xml.Linq;
+
+<!-- depreciated but works -->
+@{
+    XDocument xmlDoc = XDocument.Parse(@ViewBag.BankPaymentOptions);
+    XText paymentURLText = (XText)xmlDoc.Descendants("paymentURL").Nodes().First();
+}
+
+<p style="text-align: left;clear: both;">
+    <a href="@paymentURLText.Value">Depreciated Payment Link</a>
+</p>
+

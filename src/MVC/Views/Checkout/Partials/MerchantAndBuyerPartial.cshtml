@@ -1,0 +1,81 @@
+﻿@using Checkout;
+
+@{
+    Dictionary<string, string> Translations = (Dictionary<string, string>)ViewBag.Translations;
+    Payment payment = (Payment)ViewBag.Payment;
+}
+
+<div class="Tables-Container">
+
+    <table width="100%" border="0" cellspacing="0">
+        <tr>
+            <td with="30%" valign="top">
+                <h2>@Translations["titlePaymentReceiver"]</h2>
+            </td>
+            <td colspan="2" width="35%" valign="top">
+                <h2>@Translations["titleOrderInformation"]</h2>
+            </td>
+        </tr>
+        <tr>
+            <td valign="top">
+                <h3>@Translations["titleMerchantName"]</h3>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" style='border-collapse:collapse;'>
+                    <tr>
+                        <td valign="top" width="70">@Translations["merchantName"]</td>
+                        <td>
+                            @ViewBag.MerchantNameAndVatId
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">@Translations["merchantEmail"]</td>
+                        <td>@ViewBag.MerchantEmail</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">@Translations["merchantAddress"]</td>
+                        <td>
+                            @ViewBag.MerchantAddress
+                            <br />
+                            @ViewBag.MerchantPostCodeAndPostOffice
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top">@Translations["merchantHelpdeskNumber"]</td>
+                        <td>@ViewBag.MerchantPhone</td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <h3>@Translations["titleBuyer"]</h3>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" style='border-collapse:collapse;'>
+                    <tr>
+                        <td valign="top" width="58">@Translations["buyerName"]</td>
+                        <td>@payment.FirstName @payment.FamilyName</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">@Translations["buyerAddress"]</td>
+                        <td>
+                            @payment.Address<br />
+                            @payment.Postcode @payment.PostOffice
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="35%" valign="top">
+                <h3>@Translations["titleOrder"]</h3>
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" style='border-collapse:collapse;'>
+                    <tr>
+                        <td valign="top" width="82">@Translations["orderAmount"]</td>
+                        <td>@payment.Amount.Insert((payment.Amount.Length - 2), ",") &euro;</td>
+                    </tr>
+                    <tr>
+                        <td valign="top">@Translations["orderDescription"]</td>
+                        <td>
+                            @payment.Message
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+</div>

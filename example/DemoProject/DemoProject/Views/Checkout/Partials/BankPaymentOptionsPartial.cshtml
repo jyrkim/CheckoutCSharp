@@ -1,0 +1,57 @@
+﻿@using System.Xml.Linq;
+@using System.Xml;
+
+@{
+    Dictionary<string, string> Translations = (Dictionary<string, string>)ViewBag.Translations;
+
+    XDocument xmlDoc = XDocument.Parse(@ViewBag.BankPaymentOptions);
+    IEnumerable<XNode> banks = xmlDoc.Descendants("banks").Nodes();
+    var cancelURL = "";
+}
+
+@foreach (XNode bank in banks)
+{
+    if (bank.NodeType == XmlNodeType.Element)
+    {
+        var bankElement = (XElement)bank;
+        var url = (string)bankElement.Attribute("url");
+        var icon = (string)bankElement.Attribute("icon");
+        var name = (string)bankElement.Attribute("name");
+
+        if (bankElement.Name.LocalName.Equals("tilisiirto"))
+        {
+            int position = url.LastIndexOf('/');
+            if (url.Length > position)
+            {
+                //Cancel url can be any url on your domain, 
+                //for example http://domain/home.
+                //Now Checkout Finland's cancel link is used
+                cancelURL = url.Substring(0, (position + 1)) + "cancel";
+            }
+        }
+
+        <div class='C1' style='float: left; margin-right: 20px; min-height: 100px; text-align: center;'>
+            <form action=@url method='post'>
+
+                @foreach (XNode bankChildNode in ((XElement)bank).Nodes())
+                {
+                    var bankElementHidden = (XElement)bankChildNode;
+                    var hiddenElementName = bankElementHidden.Name.LocalName;
+                    var hiddenElementValue = (bankElementHidden.Value == null) ? "" : bankElementHidden.Value;
+
+                    <input type="hidden" name="@hiddenElementName" value="@Html.Raw(hiddenElementValue)" />
+
+                }
+                <span>
+                    <input type="image" src=@icon />
+                </span>
+                <div>@Html.Raw(name)</div>
+            </form>
+        </div>
+    }
+}
+
+<p style="text-align: left;clear: both;">
+    <a href="@cancelURL">@Translations["cancelLink"]</a>
+</p>
+
