@@ -139,8 +139,6 @@ namespace Checkout
             string hashMac = PaymentUtils.CalculateHashHMAC(Encoding.UTF8.GetBytes(this.MerchantSecretKey),
                 Encoding.UTF8.GetBytes(macString)); 
 
-            this.MAC = hashMac;
-
             return hashMac;
         }
     }
